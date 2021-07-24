@@ -1,0 +1,65 @@
+.trackerView {
+    display: grid;
+    grid-template-columns: 1fr 10fr 1fr;
+    height: 70vh;
+}
+
+.container {
+    margin: auto;
+    width: 80%;
+    display: grid;
+    grid-row-gap: 5px;
+}
+
+.prevButton, .nextButton{
+    margin: auto;
+}
+
+.activityName{
+    margin: auto;
+}
+
+.activity{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+
+.trackingChart {
+    display: grid;
+    grid-template-columns: repeat(31, 1fr);
+    grid-column-gap: 5px;
+    height: 2em;
+}
+
+.notDone{
+    border-radius: 2em;
+    display: inline-block;
+    border-width: 1px;
+    background-color: red;
+}
+
+.done{
+    border-radius: 2em;
+    display: inline-block;
+    border-width: 1px;
+    background-color: green; 
+}
+
+.unmarked {
+    border-radius: 2em;
+    display: inline-block;
+    border: 1px solid;
+}
+
+.marked {
+    background-color: green;
+}
+
+.unmarkable {
+    border-radius: 2em;
+    display: inline-block;
+    border-width: 1px;
+    border: 1px solid;
+    background-color: #ddd;
+    cursor: not-allowed;
+}
