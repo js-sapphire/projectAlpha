@@ -24,7 +24,7 @@ export function AddHabit(){
         <input type="text" placeholder="Add a habit" value={habitName} onChange={(event) => setHabitName(event.target.value)}></input>
         <button onClick={handleAddHabit}>Add Habit</button>
         <div>
-            { searchResults?.map((habit: {name: string}, index) => <button onClick={() => onSelect(index)}>{habit.name}</button>)}
+            { searchResults?.map((habit: {name: string}, index) => <button>{habit.name}</button>)}
         </div>
         </>
     )

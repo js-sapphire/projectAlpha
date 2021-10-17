@@ -1,5 +1,4 @@
 import React from "react";
-import { useFirebaseService } from "./hooks/useFirebaseService";
 import { useCurrentUser } from "./hooks/useCurrentUser";
 import { SignOutButton } from "./SignOut";
 import { SignUpForm } from "./SignUpForm";
@@ -7,7 +6,6 @@ import { SignInForm } from "./SignInForm";
 
 
 export function UserSession() {
-
   const [showSignUpAndInButton, setShowSignUpAndInButton] = React.useState(false);
   const [showSignOutButton, setSignOutButton] = React.useState(false);
   const [showSignUpForm, setShowSignUpForm] = React.useState(false);
@@ -15,7 +13,6 @@ export function UserSession() {
   const signUpModalRef = React.createRef<HTMLDivElement>();
   const signInModalRef = React.createRef<HTMLDivElement>();
   const currentUser = useCurrentUser();
-
 
   React.useEffect(() => {
     if (!currentUser) {
@@ -33,6 +30,18 @@ export function UserSession() {
       setShowSignInForm(false);
     }
   }, [showSignOutButton])
+
+  React.useEffect(() => {
+    if(showSignUpForm){
+      setShowSignInForm(false);
+    }
+  }, [showSignUpForm]);
+
+  React.useEffect(() => {
+    if(showSignInForm){
+      setShowSignUpForm(false);
+    }
+  }, [showSignInForm]);
 
   return (
    <div>

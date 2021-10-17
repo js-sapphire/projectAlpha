@@ -1,16 +1,20 @@
 import React from "react";
-import { FirebaseProvider } from "./context/firebaseContext";
+import { DateServiceProvider, FirebaseProvider } from "./context"; 
 import { UserSession } from "./UserSession";
 import { AddHabit } from "./AddHabit";
 import { CurrentDayTracker } from "./CurrentDayTracker";
+import { WeekTrackerButton } from "./WeekTrackerButton";
 
 function App() {
 
   return (
     <FirebaseProvider>
-      <UserSession />
-      <AddHabit />
-      <CurrentDayTracker />
+      <DateServiceProvider>
+        <UserSession />
+        <AddHabit />
+        <CurrentDayTracker />
+        <WeekTrackerButton />
+      </DateServiceProvider>
     </FirebaseProvider>
   );
 }
